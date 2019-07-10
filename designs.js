@@ -12,45 +12,16 @@ makeGrid(height, width);
 
 
 // Picking a color from the quick palette
-var color1 = document.getElementById('swatchRed');
-color1.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#dc3545";
-});
+var colors = ['#dc3545', '#ffc107', '#007bff', '#17a2b8', '#28a745', '#6c757d', '#343a40', '#ffffff']
 
-var color2 = document.getElementById('swatchYellow');
-color2.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#ffc107";
-});
+var palette = document.getElementById('palette');
+var colorItem = palette.getElementsByTagName('div');
 
-var color3 = document.getElementById('swatchBlue');
-color3.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#007bff";
-});
-
-var color4 = document.getElementById('swatchTeal');
-color4.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#17a2b8";
-});
-
-var color5 = document.getElementById('swatchGreen');
-color5.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#28a745";
-});
-
-var color6 = document.getElementById('swatchGrey');
-color6.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#6c757d";
-});
-
-var color7 = document.getElementById('swatchDark');
-color7.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#343a40";
-});
-
-var color8 = document.getElementById('swatchWhite');
-color8.addEventListener('click', function (event) {
-    document.getElementById("colorPicker").value = "#ffffff";
-});
+for (let i = 0; i < colorItem.length; i++) {
+    colorItem[i].addEventListener('click', function () {
+        document.getElementById('colorPicker').value = colors[i];
+    });
+};
 
 
 // Get the canvas size once the user has clicked submit
